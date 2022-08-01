@@ -4,15 +4,15 @@ app.controller('myCtrl', function ($scope) {
         image: 'images/11.jpg',
         section: 'boys | mens',
         id: 1,
-        name: 'Blue Checks',
-        desc: 'Well nice Blue Jeans for perfect men',
+        name: 'Blue Checks ',
+        desc: 'Well nice Blue Jeans for perfect men shirt',
         price: "599",
     },
     {
         section: 'boys | mens',
         id: 2,
         name: 'Baby pink',
-        desc: 'A Colour Full Half Hands for Summer',
+        desc: 'A Colour Full Half Hands for Summer shirt',
         image: 'images/22.jpg',
         price: "499",
     },
@@ -20,7 +20,7 @@ app.controller('myCtrl', function ($scope) {
         section: 'boys | mens',
         id: 3,
         name: 'Black checks',
-        desc: 'A Trendy Jeans T Shirft of Full Hands',
+        desc: 'A Trendy Jeans T Shirt of Full Hands',
         image: 'images/33.jpg',
         price: "699",
     },
@@ -157,7 +157,7 @@ app.controller('myCtrl', function ($scope) {
     $scope.store = function (item) {
         if (item) {
             $scope.foundList.push({ section: item.section, id: item.id, name: item.name, desc: item.desc, image: item.image, price: item.price })
-
+            $scope.nOfItems = $scope.nOfItems + 1 ;
         }
 
     }
@@ -166,7 +166,7 @@ app.controller('myCtrl', function ($scope) {
         if (cart) {
 
             $scope.foundList.splice($scope.foundList.indexOf(cart), 1);
-
+            $scope.nOfItems = $scope.nOfItems - 1 ;
 
 
         }
@@ -176,11 +176,15 @@ app.controller('myCtrl', function ($scope) {
    
     $scope.offData = false;
 
-    $scope.shoess = function () {
+    $scope.shoess = function () {           
         $scope.offData = true;
         $scope.mur = "shoes" ;
     }
-
+    
+    $scope.shirtsClick = function () {           
+        $scope.offData = true;
+        $scope.mur = "shirt" ;
+    }
 
     $scope.setFilter = function () {
         if ($scope.addSearchItems != "") {
