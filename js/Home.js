@@ -185,7 +185,10 @@ app.controller('myCtrl', function ($scope) {
         $scope.offData = true;
         $scope.mur = "shirt" ;
     }
-
+    $scope.dress = function () {           
+        $scope.offData = true;
+        $scope.mur = "women" ;
+    }
     $scope.setFilter = function () {
         if ($scope.addSearchItems != "") {
             $scope.offData = true;
