@@ -172,17 +172,17 @@
                         </span><br><br>
                     <label for="text">Surname</label> <input name="suame" ng-pattern="/^[A-Za-z]+$/" ng-model="buyerSurName"
                         type="text" placeholder="surname" style="margin-left: 4%;">
-                    <span ng-show="myForm.suame.$dirty && myForm.suame.$error.pattern">Ivalid Surname</span>
+                    <span ng-show="myForm.suame.$dirty && myForm.suame.$error.pattern" style="color: red;">Ivalid Surname</span>
                     <br><br>
                     <label for="text">Mail</label> <input name="mail" ng-model="buyerMail"
                         ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" type="mail" placeholder="example@gmai.com"
                         style="margin-left: 13%;">
-                    <span ng-show="myForm.mail.$dirty && myForm.mail.$error.pattern">Invalid Email</span>
+                    <span ng-show="myForm.mail.$dirty && myForm.mail.$error.pattern" style="color: red;">Invalid Email</span>
                     <br><br>
     
                     <label for="text">Ph Number</label> <input name="number" ng-model="buyerNum"
                         ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" type="text" placeholder="+91" name="" id="">
-                    <span ng-show="myForm.number.$dirty && myForm.number.$error.pattern">Invalid number</span><br> <br>
+                    <span ng-show="myForm.number.$dirty && myForm.number.$error.pattern" style="color: red;">Invalid number</span><br> <br>
                     <input type="radio" id="vehicle1" name="vehicle1" value="Bike">
                     <label for="vehicle1"> Online Payment</label><span style="padding: 0px 10px;">Or</span><input type="radio" id="vehicle1" name="vehicle1" value="Bike">
                     <label for="vehicle1"> Cash on delivery</label><br><br>
