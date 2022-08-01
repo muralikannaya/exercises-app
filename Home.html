@@ -160,11 +160,12 @@
                 ng-click="remove(cart)">Remove</button></div>
         </div>
         <h4>
-            <button ng-click="Payment()" style="margin-left: 64%;font-size: 20px;" class=" btn btn-success ">Processed
-                To pay</button>
+            <button ng-click="Payment()" style="margin-left: 64%;font-size: 20px;" ng-style="btnStyle" class=" btn btn-success ">{{payment}}</button>
         </h4>
         <div ng-show="showMurali">
+           
             <div style="padding-top: 5%;" class="col-sm-4 col-sm-offset-1">
+                
                 <form name="myForm">
                     <label for="text">Name</label> <input name="name" ng-pattern="/^[A-Za-z]+$/" ng-model="buyerName"
                         type="text" placeholder="enter your name" style="margin-left: 10%;">

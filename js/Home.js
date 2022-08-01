@@ -48,7 +48,7 @@ app.controller('myCtrl', function ($scope) {
         image: 'images/66.jpg',
         price: "599",
     },
-   
+
     {
         section: 'womens|girls',
         id: 9,
@@ -145,7 +145,7 @@ app.controller('myCtrl', function ($scope) {
         image: 'images/s6.jpg',
         price: "599",
     },
-    
+
     ]
     $scope.foundList = []
     $scope.message = ''
@@ -157,7 +157,7 @@ app.controller('myCtrl', function ($scope) {
     $scope.store = function (item) {
         if (item) {
             $scope.foundList.push({ section: item.section, id: item.id, name: item.name, desc: item.desc, image: item.image, price: item.price })
-            $scope.nOfItems = $scope.nOfItems + 1 ;
+            $scope.nOfItems = $scope.nOfItems + 1;
         }
 
     }
@@ -166,28 +166,28 @@ app.controller('myCtrl', function ($scope) {
         if (cart) {
 
             $scope.foundList.splice($scope.foundList.indexOf(cart), 1);
-            $scope.nOfItems = $scope.nOfItems - 1 ;
+            $scope.nOfItems = $scope.nOfItems - 1;
 
 
         }
 
     }
     $scope.mur = { $: undefined };
-   
+
     $scope.offData = false;
 
-    $scope.shoess = function () {           
+    $scope.shoess = function () {
         $scope.offData = true;
-        $scope.mur = "shoes" ;
+        $scope.mur = "shoes";
     }
-    
-    $scope.shirtsClick = function () {           
+
+    $scope.shirtsClick = function () {
         $scope.offData = true;
-        $scope.mur = "shirt" ;
+        $scope.mur = "shirt";
     }
-    $scope.dress = function () {           
+    $scope.dress = function () {
         $scope.offData = true;
-        $scope.mur = "women" ;
+        $scope.mur = "women";
     }
     $scope.setFilter = function () {
         if ($scope.addSearchItems != "") {
@@ -197,9 +197,9 @@ app.controller('myCtrl', function ($scope) {
             $scope.offData = false;
         }
     };
-     
+
     // $scope.state = $state;
-     
+
     $scope.like = function (item) {
         if (item) {
             $scope.myStyle = {
@@ -216,22 +216,38 @@ app.controller('myCtrl', function ($scope) {
         $scope.count1 = $scope.count1 + 1;
     };
 
-
+    $scope.payment = "Proceed To Pay"
     $scope.showMurali = false;
     $scope.Payment = function () {
-        $scope.showMurali = true;
+        if ($scope.showMurali == false) {
+            $scope.showMurali = true;
+            $scope.payment = "Close Payment"
+            $scope.btnStyle = {
+                "background-color": "red"
+
+            }
+        } else {
+            $scope.showMurali = false;
+            $scope.payment = "Proceed To Pay"
+            $scope.btnStyle = {
+                "background-color": "green"
+
+            }
+        }
+
+
     };
 
-       $scope.cartShow = false;
-     $scope.cartOpen = function () {
+    $scope.cartShow = false;
+    $scope.cartOpen = function () {
         $scope.cartShow = true;
-     };
-     
-     $scope.backToCart = function () {
-        $scope.cartShow = false;
-     };
+    };
 
-   
+    $scope.backToCart = function () {
+        $scope.cartShow = false;
+    };
+
+
 
 
 

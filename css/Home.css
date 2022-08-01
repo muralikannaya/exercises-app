@@ -115,3 +115,14 @@
     width: 20px;
     text-align: center;
 }
+
+#closepayment {
+    position: absolute;
+    z-index: 3;
+    top: 10;
+    right: 0;
+    background-color: red;
+    color: white;
+    width: 20px;
+    text-align: center;
+}
