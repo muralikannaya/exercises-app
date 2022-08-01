@@ -207,12 +207,12 @@ app.controller('myCtrl', function ($scope) {
             }
         }
     };
-
-    $scope.decItem1 = function () {
+//   increment and decrement items quantitiy 
+    $scope.decItem = function (item) {
 
         $scope.count1 = $scope.count1 - 1;
     };
-    $scope.incItem1 = function () {
+    $scope.incItem1 = function (item) {
         $scope.count1 = $scope.count1 + 1;
     };
 
@@ -246,8 +246,10 @@ app.controller('myCtrl', function ($scope) {
     $scope.backToCart = function () {
         $scope.cartShow = false;
     };
-
-
+       $scope.finalAlert= "your payment is completed";
+    $scope.alertSubmit = finalAlert => {
+        $window. alert(finalAlert);
+    }
 
 
 
