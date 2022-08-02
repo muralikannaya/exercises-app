@@ -95,7 +95,7 @@
 
 #cartblock {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     top: 24%;
     left: 9%;
     background-color: azure;
@@ -107,7 +107,7 @@
 }
 #closecart {
     position: absolute;
-    z-index: 2;
+    z-index: 4;
     top: 0;
     right: 0;
     background-color: red;
@@ -118,11 +118,20 @@
 
 #closepayment {
     position: absolute;
-    z-index: 3;
+    z-index: 5;
     top: 10;
     right: 0;
     background-color: red;
     color: white;
     width: 20px;
     text-align: center;
+}
+#completeblock {
+    position: absolute;
+    z-index: 2;
+    top: 20%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+   
 }

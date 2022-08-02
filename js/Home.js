@@ -239,12 +239,22 @@ app.controller('myCtrl', function ($scope) {
     };
 
     $scope.cartShow = false;
+   
     $scope.cartOpen = function () {
         $scope.cartShow = true;
+        $scope.bgStyle = {
+            
+            "background-color": "#000",
+            "opacity" : "0.5"
+        }
     };
 
     $scope.backToCart = function () {
         $scope.cartShow = false;
+        $scope.bgStyle = {
+            
+            "opacity" : "1"
+        }
     };
        $scope.finalAlert= "your payment is completed";
     $scope.alertSubmit = finalAlert => {

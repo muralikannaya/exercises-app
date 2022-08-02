@@ -113,27 +113,27 @@
         </div>
 
 
+        <div id="completeblock"  ng-style="bgStyle"> 
+            <div class="items" >
+                <div class="row" style="margin-left: 0px ;margin-right: 0px;">
+                    <div styl class="col-md-2" style="background-color: white;" ng-show="offData" ng-repeat="item in searchItems | filter: mur">
+                        <div class="card" style="box-shadow: 5px 5px 5px ;">
+                            <img style="width: 103%;" ng-src="{{item.image}}" alt="">
+                            <div class="card-body">
+                                <h4>{{item.name}}</h4>
+                                <p>{{item.desc}}</p>
+                                <h3>Price: &#8377; {{item.price}}</h3>
+                                <div><span id="likeicon"><i ng-style="myStyle" ng-click="like(item)"
+                                            class="fa-solid fa-2x fa-heart"></i></span><button
+                                        class="button btn-primary" ng-click="store(item)">Add Cart</button></div>
 
-        <div class="items">
-            <div class="row" style="margin-left: 0px ;margin-right: 0px;">
-                <div styl class="col-md-2" ng-show="offData" ng-repeat="item in searchItems | filter: mur">
-                    <div class="card" style="box-shadow: 5px 5px 5px ;">
-                        <img style="width: 103%;" ng-src="{{item.image}}" alt="">
-                        <div class="card-body">
-                            <h4>{{item.name}}</h4>
-                            <p>{{item.desc}}</p>
-                            <h3>Price: &#8377; {{item.price}}</h3>
-                            <div><span id="likeicon"><i ng-style="myStyle" ng-click="like(item)"
-                                        class="fa-solid fa-2x fa-heart"></i></span><button class="button btn-primary"
-                                    ng-click="store(item)">Add Cart</button></div>
-
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-
         </div>
-
     </div>
     <div id="cartblock" ng-show="cartShow" class="row">
         <div ng-click="backToCart()" id="closecart">X</div>
@@ -141,19 +141,21 @@
             <h2>Cart <span style="color: orange;">Items</span> </h2>
         </div>
         <div class="row" style="margin-bottom: 5px;" ng-repeat="cart in foundList">
-            <div class="col-md-4">
+            <div class="col-sm-4">
                 <img style="height:30% ; width: 40%; margin-left: 5%;" class="card-img" ng-src="{{cart.image}}"
                     alt="" />
             </div>
-            <div style="display: inline;" class="col-md-6">
+            <div style="display: inline-block;" class="col-sm-5">
 
                 <h2 style="margin-top: 0px;">{{cart.desc}}</h2>
                 <div id="incdec">
                     <p style="font-size: 24px;margin-right: 200px;">Number of Items</p>
                     <div style="display: inline-flex ;">
-                        <i type="button" id="incdecbtn" ng-click="decItem(item)" ng-init="count=1" class="fa-solid fa-minus"></i>
+                        <i type="button" id="incdecbtn" ng-click="decItem(item)" ng-init="count=1"
+                            class="fa-solid fa-minus"></i>
                         <h4 id="num">{{count}}</h4>
-                        <i i type="button" class="fa-solid fa-plus" id="incdecbtn" ng-click="incItem(item)" ng-init="count=1"></i>
+                        <i i type="button" class="fa-solid fa-plus" id="incdecbtn" ng-click="incItem(item)"
+                            ng-init="count=1"></i>
                     </div>
 
                 </div>
@@ -164,12 +166,13 @@
                     ng-click="remove(cart)">Remove</button></div>
         </div>
         <h4>
-            <button ng-click="Payment()" style="margin-left: 64%;font-size: 20px;" ng-style="btnStyle"
+            <button ng-click="Payment()" ng-style="btnStyle"
                 class=" btn btn-success ">{{payment}}</button>
         </h4>
         <div ng-show="showMurali">
             <div class="row">
-                <div style="padding-top: 5%;" class="col-sm-4 col-sm-offset-1">
+               
+                <div style="padding-top: 5%;" class="col-sm-6 col-sm-offset-2">
 
                     <form name="myForm">
                         <label for="text">Name</label> <input name="name" ng-pattern="/^[A-Za-z]+$/"
@@ -178,19 +181,19 @@
                             name
                         </span><br><br>
                         <label for="text">Surname</label> <input name="suame" ng-pattern="/^[A-Za-z]+$/"
-                            ng-model="buyerSurName" type="text" placeholder="surname" style="margin-left: 4%;">
+                            ng-model="buyerSurName" type="text" placeholder="surname" style="margin-left: 5%;">
                         <span ng-show="myForm.suame.$dirty && myForm.suame.$error.pattern" style="color: red;">Ivalid
                             Surname</span>
                         <br><br>
                         <label for="text">Mail</label> <input name="mail" ng-model="buyerMail"
                             ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" type="mail"
-                            placeholder="example@gmai.com" style="margin-left: 13%;">
+                            placeholder="example@gmai.com" style="margin-left: 12%;">
                         <span ng-show="myForm.mail.$dirty && myForm.mail.$error.pattern" style="color: red;">Invalid
                             Email</span>
                         <br><br>
 
                         <label for="text">Ph Number</label> <input name="number" ng-model="buyerNum"
-                            ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" type="text" placeholder="+91" name="" id="">
+                            ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" type="text" placeholder="+91" style="margin-left: 2%;" name="" id="">
                         <span ng-show="myForm.number.$dirty && myForm.number.$error.pattern" style="color: red;">Invalid
                             number</span><br> <br>
                         <input type="radio" id="vehicle1" name="vehicle1" value="Bike">
@@ -199,21 +202,22 @@
                         <label for="vehicle1"> Cash on delivery</label><br><br>
                         <label for="address">Address</label><br>
                         <!-- <input type="textarea"> -->
-                        <textarea name="" id="" cols="35" rows="4"></textarea> 
-                        <button ng-click="alertSubmit()" style="margin-left: 80%; margin-top: 3%;" class="btn btn-primary">Submit</button>
+                        <textarea name="" id="" cols="35" rows="4"></textarea>
+                        <button ng-click="alertSubmit()" style="margin-left: 80%; margin-top: 3%;"
+                            class="btn btn-primary">Submit</button>
                     </form>
                 </div>
                 <div class="col-sm-4 " style="text-align: center;">
                     <img style="width: 100%;margin-top: 13%;" src="./images/writing img.jpg" alt="">
                 </div>
             </div>
-            
+
         </div>
 
     </div>
 
 
-
+    <!-- <div id="completeblock"  ng-style="bgStyle"> </div> -->
     <script src="./js/Home.js"></script>
 </body>
 
