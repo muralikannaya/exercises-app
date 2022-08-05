@@ -18,8 +18,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div id="containermain" class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -36,7 +35,7 @@
                         <li><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
                                 Help</a>
                         </li>
-                        <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log Out</a>
+                        <li><a href="#"><button type="button" ng-click="logInEnter()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log In</button></a>
                         </li>
                         <li style="color: white;"><a href="#"><i type="button" ng-click="cartOpen()"
                                     class="fa-solid fa-2x fa-cart-arrow-down"></i><span class="count"
@@ -46,8 +45,7 @@
                     </ul>
                     <form class="navbar-form navbar-left" action="#" method="GET">
                         <div class="input-group">
-                            <input ng-model="addSearchItems" ng-change="setFilter()" type="text" class="form-control"
-                                placeholder="Search..." id="query" name="search" value="">
+                            <input ng-model="addSearchItems" ng-change="setFilter()" type="text" class="form-control" placeholder="Search..." id="query" name="search" value="">
                             <div class="input-group-btn">
                                 <button ng-click="addProducts()" type="submit" class="btn btn-success"><span
                                         class="glyphicon glyphicon-search"></span></button>
@@ -116,8 +114,7 @@
         <div id="completeblock" ng-style="bgStyle">
             <div class="items" style="margin-top: 1%;">
                 <div class="row" style="margin-left: 0px ;margin-right: 0px;">
-                    <div styl class="col-md-2" style="background-color: white;" ng-show="offData"
-                        ng-repeat="item in searchItems | filter: mur">
+                    <div styl class="col-md-2" style="background-color: white;" ng-show="offData" ng-repeat="item in searchItems | filter: mur">
                         <div class="card" style="box-shadow: 5px 5px 5px ;">
                             <img style="width: 103%;" ng-src="{{item.image}}" alt="">
                             <div class="card-body">
@@ -125,8 +122,7 @@
                                 <p>{{item.desc}}</p>
                                 <h3>Price: &#8377; {{item.price}}</h3>
                                 <div><span id="likeicon"><i ng-style="myStyle" ng-click="like($event)"
-                                            class="fa-solid fa-2x fa-heart"></i></span><button
-                                        class="button btn-primary" ng-click="store(item)">Add Cart</button></div>
+                                            class="fa-solid fa-2x fa-heart"></i></span><button class="button btn-primary" ng-click="store(item)">Add Cart</button></div>
 
                             </div>
                         </div>
@@ -143,8 +139,7 @@
         </div>
         <div class="row" style="margin-bottom: 5px;" ng-repeat="cart in foundList">
             <div class="col-sm-4">
-                <img style="height:30% ; width: 40%; margin-left: 5%;" class="card-img" ng-src="{{cart.image}}"
-                    alt="" />
+                <img style="height:30% ; width: 40%; margin-left: 5%;" class="card-img" ng-src="{{cart.image}}" alt="" />
             </div>
             <div style="display: inline-block;" class="col-sm-5">
 
@@ -152,19 +147,16 @@
                 <div id="incdec">
                     <p style="font-size: 24px;margin-right: 200px;">Number of Items</p>
                     <div style="display: inline-flex ;">
-                        <i type="button" id="incdecbtn" ng-click="decItem(item)" ng-init="count=1"
-                            class="fa-solid fa-minus"></i>
+                        <i type="button" id="incdecbtn" ng-click="decItem(item)" ng-init="count=1" class="fa-solid fa-minus"></i>
                         <h4 id="num">{{count}}</h4>
-                        <i i type="button" class="fa-solid fa-plus" id="incdecbtn" ng-click="incItem(item)"
-                            ng-init="count=1"></i>
+                        <i i type="button" class="fa-solid fa-plus" id="incdecbtn" ng-click="incItem(item)" ng-init="count=1"></i>
                     </div>
 
                 </div>
                 <h4 class="name_price">{{cart.name}} &nbsp; &nbsp; &#8377;{{cart.price}} </h4>
 
             </div>
-            <div class="col-md-2"><button style="font-size: 20px;" class="btn-cart btn-danger"
-                    ng-click="remove(cart)">Remove</button></div>
+            <div class="col-md-2"><button style="font-size: 20px;" class="btn-cart btn-danger" ng-click="remove(cart)">Remove</button></div>
         </div>
         <h4>
             <button ng-click="Payment()" ng-style="btnStyle" class=" btn btn-success ">{{payment}}</button>
@@ -175,37 +167,29 @@
                 <div style="padding-top: 5%;" class="col-sm-6 col-sm-offset-2">
 
                     <form name="myForm">
-                        <label for="text">Name</label> <input name="name" ng-pattern="/^[A-Za-z]+$/"
-                            ng-model="buyerName" type="text" placeholder="enter your name" style="margin-left: 10%;">
+                        <label for="text">Name</label> <input name="name" ng-pattern="/^[A-Za-z]+$/" ng-model="buyerName" type="text" placeholder="enter your name" style="margin-left: 10%;">
                         <span ng-show="myForm.name.$dirty && myForm.name.$error.pattern" style="color: red;">Invalid
                             name
                         </span><br><br>
-                        <label for="text">Surname</label> <input name="suame" ng-pattern="/^[A-Za-z]+$/"
-                            ng-model="buyerSurName" type="text" placeholder="surname" style="margin-left: 5%;">
+                        <label for="text">Surname</label> <input name="suame" ng-pattern="/^[A-Za-z]+$/" ng-model="buyerSurName" type="text" placeholder="surname" style="margin-left: 5%;">
                         <span ng-show="myForm.suame.$dirty && myForm.suame.$error.pattern" style="color: red;">Ivalid
                             Surname</span>
                         <br><br>
-                        <label for="text">Mail</label> <input name="mail" ng-model="buyerMail"
-                            ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" type="mail"
-                            placeholder="example@gmai.com" style="margin-left: 12%;">
+                        <label for="text">Mail</label> <input name="mail" ng-model="buyerMail" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" type="mail" placeholder="example@gmai.com" style="margin-left: 12%;">
                         <span ng-show="myForm.mail.$dirty && myForm.mail.$error.pattern" style="color: red;">Invalid
                             Email</span>
                         <br><br>
 
-                        <label for="text">Ph Number</label> <input name="number" ng-model="buyerNum"
-                            ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" type="text" placeholder="+91"
-                            style="margin-left: 2%;" name="" id="">
+                        <label for="text">Ph Number</label> <input name="number" ng-model="buyerNum" ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" type="text" placeholder="+91" style="margin-left: 2%;" name="" id="">
                         <span ng-show="myForm.number.$dirty && myForm.number.$error.pattern" style="color: red;">Invalid
                             number</span><br> <br>
                         <input type="radio" id="vehicle1" name="vehicle1" value="Bike">
-                        <label for="vehicle1"> Online Payment</label><span style="padding: 0px 10px;">Or</span><input
-                            type="radio" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1"> Online Payment</label><span style="padding: 0px 10px;">Or</span><input type="radio" id="vehicle1" name="vehicle1" value="Bike">
                         <label for="vehicle1"> Cash on delivery</label><br><br>
                         <label for="address">Address</label><br>
                         <!-- <input type="textarea"> -->
                         <textarea name="" id="" cols="35" rows="4"></textarea>
-                        <button ng-click="alertSubmit()" style="margin-left: 80%; margin-top: 3%;"
-                            class="btn btn-primary">Submit</button>
+                        <button ng-click="alertSubmit()" style="margin-left: 80%; margin-top: 3%;" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
                 <div class="col-sm-4 " style="text-align: center;">
@@ -217,24 +201,24 @@
 
     </div>
 
-    <div id="loginform">
+    <div id="loginform" ng-show="loginPage">
         <div class="row" style="width: 100%;">
             <div class="col-sm-4">
                 <div style="padding-left: 13%;padding-top: 27%;">
-                    <h3 style="padding-left: 12%;">LogIn Through</h3>
+                    <h3 style="padding-left: 5%;color: whitesmoke;">𝓛𝓸𝓰𝓲𝓷 𝓣𝓱𝓻𝓸𝓾𝓰𝓱</h3>
                     <div style="margin-top: 11%;">
-                        <button id="loginselbtn" style="border-radius: 12px;font-size: 16px;">Phone Number</button>
-                        <button id="loginselbtn" style="border-radius: 12px;font-size: 16px;">User Name</button>
+                        <button id="loginselbtn" ng-style="phnbtnstyle" ng-click="userPhoneLogin()" style="border-radius: 12px;font-size: 16px;">Phone Number</button>
+                        <button id="loginselbtn" ng-style="userbtnstyle" ng-click="userLogin()" style="border-radius: 12px;font-size: 16px;margin-left: 5%;">User Name</button>
                     </div>
                 </div>
             </div>
-            <div style="background-color: white;margin-top: 6%;" class="col-sm-3 ">
-                <div >
+            <div ng-show="userForm" style="background-color: white;margin-top: 6%;" class="col-sm-3 ">
+                <div>
                     <h2 style="text-align: center;">LogIn Here</h2>
                     <div>
                         <input type="text" id="username" placeholder="Enter User Name">
                         <input type="text" id="username" placeholder="Enter Password"><br>
-                        <div style="margin-top: 5%;"><a href="">New User</a> / <a href="">Forgot username</a></div>
+                        <div style="margin-top: 5%;"><a type="button" ng-click="newUserForm()" href="">New User</a> / <a href="">Forgot username</a></div>
                         <button id="loginbtn">Login</button>
 
                     </div>
@@ -242,16 +226,30 @@
 
 
             </div>
-            <div class="col-sm-1"></div>
-            <div style="background-color: white;margin-top: 6%;" class="col-sm-4 offset-sm-4">
+            <div ng-show="userphoneForm" style="background-color: white;margin-top: 6%;" class="col-sm-3 ">
+                <div>
+                    <h2 style="text-align: center;">LogIn Here</h2>
+                    <div>
+                        <input type="text" id="username" placeholder="Enter Mobile Number">
+                        <button id="otpbtn" style="margin-left: 69%;margin-top: 4%;">Get OTP</button>
+                        <input type="text" id="enterotp" placeholder="Enter OTP"><br>
+
+                        <button style="margin-top: 5%;" id="loginbtn">Login</button>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- <div class="col-sm-1"></div> -->
+            <div ng-show="newUser" style="background-color: white;margin-top: 4%;" class="col-sm-4 offset-sm-4">
                 <h2 style="text-align: center;">Register Here</h2>
                 <div>
-                    <input type="text" id="username" placeholder="create User Name">
-                    <input type="text" id="username" placeholder="create Password">
+                    <input type="text" id="username" placeholder="Create User Name">
+                    <input type="text" ng-model="createPassword" id="username" placeholder="Create Password">
                     <input type="text" id="username" placeholder="Re-enter  Password">
-                    <div style="margin-top: 5%;"><a href="">New User</a> / <a href="">Forgot username</a></div>
-                    <button id="loginbtn">Register</button>
-
+                    <button style="margin-top: 5%;" id="loginbtn">Register</button>
+                    <h3 ng-model="password1">{{password1}}</h3>
                 </div>
 
 
