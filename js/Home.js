@@ -200,12 +200,10 @@ app.controller('myCtrl', function ($scope) {
 
     // $scope.state = $state;
 
-    $scope.like = function (item) {
-        if (item) {
-            $scope.myStyle = {
-                "color": "red"
-            }
-        }
+    $scope.like = function (event) {
+
+        event.currentTarget.style.color  = event.currentTarget.style.color == 'red'?'black':'red';
+
     };
 //   increment and decrement items quantitiy 
     $scope.decItem = function (item) {

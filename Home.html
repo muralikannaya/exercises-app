@@ -113,17 +113,18 @@
         </div>
 
 
-        <div id="completeblock"  ng-style="bgStyle"> 
-            <div class="items" >
+        <div id="completeblock" ng-style="bgStyle">
+            <div class="items" style="margin-top: 1%;">
                 <div class="row" style="margin-left: 0px ;margin-right: 0px;">
-                    <div styl class="col-md-2" style="background-color: white;" ng-show="offData" ng-repeat="item in searchItems | filter: mur">
+                    <div styl class="col-md-2" style="background-color: white;" ng-show="offData"
+                        ng-repeat="item in searchItems | filter: mur">
                         <div class="card" style="box-shadow: 5px 5px 5px ;">
                             <img style="width: 103%;" ng-src="{{item.image}}" alt="">
                             <div class="card-body">
                                 <h4>{{item.name}}</h4>
                                 <p>{{item.desc}}</p>
                                 <h3>Price: &#8377; {{item.price}}</h3>
-                                <div><span id="likeicon"><i ng-style="myStyle" ng-click="like(item)"
+                                <div><span id="likeicon"><i ng-style="myStyle" ng-click="like($event)"
                                             class="fa-solid fa-2x fa-heart"></i></span><button
                                         class="button btn-primary" ng-click="store(item)">Add Cart</button></div>
 
@@ -166,12 +167,11 @@
                     ng-click="remove(cart)">Remove</button></div>
         </div>
         <h4>
-            <button ng-click="Payment()" ng-style="btnStyle"
-                class=" btn btn-success ">{{payment}}</button>
+            <button ng-click="Payment()" ng-style="btnStyle" class=" btn btn-success ">{{payment}}</button>
         </h4>
         <div ng-show="showMurali">
             <div class="row">
-               
+
                 <div style="padding-top: 5%;" class="col-sm-6 col-sm-offset-2">
 
                     <form name="myForm">
@@ -193,7 +193,8 @@
                         <br><br>
 
                         <label for="text">Ph Number</label> <input name="number" ng-model="buyerNum"
-                            ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" type="text" placeholder="+91" style="margin-left: 2%;" name="" id="">
+                            ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" type="text" placeholder="+91"
+                            style="margin-left: 2%;" name="" id="">
                         <span ng-show="myForm.number.$dirty && myForm.number.$error.pattern" style="color: red;">Invalid
                             number</span><br> <br>
                         <input type="radio" id="vehicle1" name="vehicle1" value="Bike">
@@ -216,7 +217,48 @@
 
     </div>
 
+    <div id="loginform">
+        <div class="row" style="width: 100%;">
+            <div class="col-sm-4">
+                <div style="padding-left: 13%;padding-top: 27%;">
+                    <h3 style="padding-left: 12%;">LogIn Through</h3>
+                    <div style="margin-top: 11%;">
+                        <button id="loginselbtn" style="border-radius: 12px;font-size: 16px;">Phone Number</button>
+                        <button id="loginselbtn" style="border-radius: 12px;font-size: 16px;">User Name</button>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color: white;margin-top: 6%;" class="col-sm-3 ">
+                <div >
+                    <h2 style="text-align: center;">LogIn Here</h2>
+                    <div>
+                        <input type="text" id="username" placeholder="Enter User Name">
+                        <input type="text" id="username" placeholder="Enter Password"><br>
+                        <div style="margin-top: 5%;"><a href="">New User</a> / <a href="">Forgot username</a></div>
+                        <button id="loginbtn">Login</button>
 
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-sm-1"></div>
+            <div style="background-color: white;margin-top: 6%;" class="col-sm-4 offset-sm-4">
+                <h2 style="text-align: center;">Register Here</h2>
+                <div>
+                    <input type="text" id="username" placeholder="create User Name">
+                    <input type="text" id="username" placeholder="create Password">
+                    <input type="text" id="username" placeholder="Re-enter  Password">
+                    <div style="margin-top: 5%;"><a href="">New User</a> / <a href="">Forgot username</a></div>
+                    <button id="loginbtn">Register</button>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
     <!-- <div id="completeblock"  ng-style="bgStyle"> </div> -->
     <script src="./js/Home.js"></script>
 </body>
