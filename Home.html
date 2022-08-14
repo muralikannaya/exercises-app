@@ -18,7 +18,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div id="containermain" class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <button type="button" class="navbar-toggle collapsed" ng-toggle="collapse" ng-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -37,6 +37,10 @@
                         </li>
                         <li><a href="#"><button type="button" ng-click="logInEnter()"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log In</button></a>
                         </li>
+                        <!-- <li style="color: white;"><a href="#"><i ng-style="myStyle" ng-click="cartOpen()" class="fa-solid fa-2x fa-heart"></i><span class="favcount"
+                            ng-init="nOfItems=0">{{nOfItems}}</span></a>
+                        </li> -->
+
                         <li style="color: white;"><a href="#"><i type="button" ng-click="cartOpen()"
                                     class="fa-solid fa-2x fa-cart-arrow-down"></i><span class="count"
                                     ng-init="nOfItems=0">{{nOfItems}}</span> Cart</a>
@@ -257,6 +261,31 @@
             </div>
         </div>
     </div>
+
+
+    <!-- <div>
+        <div class="row" style="margin-bottom: 5px;" ng-repeat="cart in favouritList">
+            <div class="col-sm-4">
+                <img style="height:30% ; width: 40%; margin-left: 5%;" class="card-img" ng-src="{{cart.image}}" alt="" />
+            </div>
+            <div style="display: inline-block;" class="col-sm-5">
+
+                <h2 style="margin-top: 0px;">{{cart.desc}}</h2>
+                <div id="incdec">
+                    <p style="font-size: 24px;margin-right: 200px;">Number of Items</p>
+                    <div style="display: inline-flex ;">
+                        <i type="button" id="incdecbtn" ng-click="decItem(item)" ng-init="count=1" class="fa-solid fa-minus"></i>
+                        <h4 id="num">{{count}}</h4>
+                        <i i type="button" class="fa-solid fa-plus" id="incdecbtn" ng-click="incItem(item)" ng-init="count=1"></i>
+                    </div>
+
+                </div>
+                <h4 class="name_price">{{cart.name}} &nbsp; &nbsp; &#8377;{{cart.price}} </h4>
+
+            </div>
+            <div class="col-md-2"><button style="font-size: 20px;" class="btn-cart btn-danger" ng-click="remove(cart)">Remove</button></div>
+        </div>
+    </div> -->
     <!-- <div id="completeblock"  ng-style="bgStyle"> </div> -->
     <script src="./js/Home.js"></script>
 </body>

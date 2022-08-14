@@ -150,9 +150,9 @@ app.controller('myCtrl', function($scope) {
     $scope.foundList = []
     $scope.message = ''
     $scope.isVisible = false
-    $scope.show = function() {
-        $scope.isVisible = $scope.isVisible ? fasle : true
-    }
+        // $scope.show = function() {
+        //     $scope.isVisible = $scope.isVisible ? fasle : true
+        // }
 
     $scope.store = function(item) {
         if (item) {
@@ -172,6 +172,11 @@ app.controller('myCtrl', function($scope) {
         }
 
     }
+
+
+
+
+
     $scope.mur = { $: undefined };
 
     $scope.offData = false;
@@ -198,11 +203,16 @@ app.controller('myCtrl', function($scope) {
         }
     };
 
-    // $scope.state = $state;
+
+    // $scope.favouritList = []
 
     $scope.like = function(event) {
 
         event.currentTarget.style.color = event.currentTarget.style.color == 'red' ? 'black' : 'red';
+        // if (event) {
+        //     $scope.favouritList.push({ section: event.section, id: event.id, name: event.name, desc: event.desc, image: event.image, price: event.price })
+        //     $scope.nOfItems = $scope.nOfItems + 1;
+        // }
 
     };
     //   increment and decrement items quantitiy 
